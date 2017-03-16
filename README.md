@@ -1,4 +1,4 @@
-#JSONThermometer
+# JSONThermometer
 
 Thingspeak channel in example:
 
