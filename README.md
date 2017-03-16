@@ -1,6 +1,6 @@
 #JSONThermometer
 
-Thingspeak channel:
+Thingspeak channel in example:
 
 ```
 "channel": {
