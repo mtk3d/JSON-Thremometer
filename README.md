@@ -2,6 +2,7 @@
 
 Thingspeak channel:
 
+```
 "channel": {
     "id": 9,
     "name": "my_house",
@@ -14,3 +15,4 @@ Thingspeak channel:
     "updated_at": "2017-03-16T19:17:31Z",
     "last_entry_id": 11844269
 }
+```
