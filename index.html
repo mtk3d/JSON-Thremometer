@@ -3,48 +3,7 @@
 	<head>
 		<title>JSON Thermometer</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="Keywords" content="">
-		<meta name="Description" content="">
-		<!-- <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-		<style type="text/css">
-			body {
-				background-color: #48a5e6;
-			}
-			.content {
-				width: 700px;
-				margin: 0 auto;
-			}
-			.hand {
-				transform: rotate(220deg);
-				margin: 0 auto;
-				margin-top: -300px;
-				width: 0; 
-				height: 0;
-			}
-			.triangle-up {
-				width: 10px;
-				height: 50px;
-				background-color: #fff;
-				position: relative;
-				bottom: 288px;
-			}
-			.background {
-				margin: 0 auto;
-				background-image: url('bg.png');
-				background-size: cover;
-				width: 600px;
-				height: 600px;
-				position: relative;
-			}
-			.deg {
-				text-align: center;
-				font-size: 100px;
-				font-family: arial;
-				color: #fff;
-				margin-top: -46px;
-			}
-		</style>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<div class="content">
@@ -54,54 +13,9 @@
 			</div>
 			<div class="deg" id="id01">0°F</div>
 		</div>
+        <script src="script.js"></script>
 		<script type="text/javascript">
-		var actual_deg = 220;
-		var elem = document.getElementById("hand"); 
-		function rotate(precent)
-		{
-			var deg = Math.round(280/100*precent);
-			var to_deg = 220+deg;
-			var id = setInterval(frame, 5);
-			function frame(){
-				if(to_deg==actual_deg)
-				{
-					clearInterval(id);					
-				}else if(to_deg>actual_deg){
-					//right
-					actual_deg++; 
-			    	elem.style.transform = 'rotate(' + actual_deg + 'deg)';	
-				}else{
-					//left
-					actual_deg--; 
-			    	elem.style.transform = 'rotate(' + actual_deg + 'deg)';
-				}
-			}
-		}
-
-		function write_to_hand() {
-
-			var xmlhttp = new XMLHttpRequest();
-			var url = "https://thingspeak.com/channels/9/field/2.json";
-			var out;
-			xmlhttp.onreadystatechange = function() {
-			    if (this.readyState == 4 && this.status == 200) {
-			        var myArr = JSON.parse(this.responseText);
-			        myFunction(myArr);
-			    }
-			};
-			xmlhttp.open("GET", url, true);
-			xmlhttp.send();
-			
-			function myFunction(arr) {
-			    out = arr.feeds[99].field2;
-			    document.getElementById("id01").innerHTML = Math.round(out) + '°F';
-			    rotate(out);
-			}
-		}
-
-		setInterval(write_to_hand, 1000);
-
-
+		      setInterval(write_to_hand, 1000);
 		</script>
 	</body>
 </html>
