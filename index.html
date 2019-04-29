@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-	<head>
-		<title>JSON Thermometer</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<div class="content">
-		<div class="background"></div>
-			<div id="hand" class="hand">
-				<div class="triangle-up"></div>
-			</div>
-			<div class="deg" id="id01">0°F</div>
-		</div>
-        <script src="script.js"></script>
-		<script type="text/javascript">
-		      setInterval(write_to_hand, 1000);
-		</script>
-	</body>
+
+<head>
+  <title>JSON Thermometer</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="content">
+    <div class="gauge">
+      <div id="hand" class="hand"></div>
+      <div class="temp" id="temp">0°F</div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script type="text/javascript">
+    setInterval(function () {
+      fetchTemperature("https://thingspeak.com/channels/9/field/2.json");
+    }, 1000);
+  </script>
+</body>
+
 </html>

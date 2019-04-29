@@ -1,8 +1,9 @@
-# JSONThermometer
+# JSON Thermometer
+Animated clock indicator written in pure web technologies, with fetching data in JSON.
 
 Thingspeak channel in example:
-
-```
+https://thingspeak.com/channels/9
+```JSON
 "channel": {
     "id": 9,
     "name": "my_house",
