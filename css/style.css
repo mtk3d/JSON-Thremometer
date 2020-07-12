@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgb(2,0,36);
-  background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(130,234,255,1) 100%);
+  background: black;
 }
 .content {
   display: flex;
