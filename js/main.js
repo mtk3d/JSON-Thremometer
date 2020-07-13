@@ -14,7 +14,7 @@ function fetchTemperature(url) {
 }
 
 function writeToHand(response) {
-  output = response.feeds[99].field4;
+  output = response.feeds[response.feeds.length - 1].field4;
   temperature.innerHTML = Math.round(output) + '°F';
   rotate(output);
 }
